@@ -1,0 +1,45 @@
+body {
+  font-family: monospace;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+  line-height: 1.5;
+  color: #222;
+  white-space: pre-wrap;
+}
+
+#dashboard {
+  margin-top: 40px;
+  border-top: 2px solid #222;
+  padding-top: 16px;
+  white-space: normal;
+}
+
+#dashboard h2 {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.bar-label {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.bar {
+  height: 14px;
+  background: #222;
+  display: inline-block;
+}
+
+.bar-value {
+  font-size: 0.9em;
+}
