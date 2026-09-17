@@ -1,0 +1,77 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 0 16px;
+  background: #0f0f14;
+  color: #eaeaea;
+}
+
+h1 {
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #2a2a33;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: 600;
+  flex: 1;
+}
+
+.status {
+  font-size: 0.85rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.status.idle      { background: #2a2a33; color: #999; }
+.status.running   { background: #3a3410; color: #e0c040; }
+.status.completed { background: #123a1e; color: #4ade80; }
+.status.failed    { background: #3a1212; color: #f87171; }
+
+.count {
+  font-size: 0.8rem;
+  color: #999;
+  width: 60px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+button:hover { background: #1d4ed8; }
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 12px;
+}
+
+#allStatus {
+  font-size: 0.9rem;
+  color: #4ade80;
+  min-height: 1.2em;
+}
+
+#compareResult {
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: #ccc;
+  white-space: pre-wrap;
+}

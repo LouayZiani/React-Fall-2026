@@ -1,0 +1,31 @@
+JS file alone is ok
+several tasks need to be created be asynchronous (use setTimeout...)
+several promises as well
+create a queue
+create readme.md (in GitHub)
+explain abt the closures used (create private timers of some kind)
+explain the call stack
+why does js continue when settimeout is waiting?
+diff btwn tasks, multitasks, microtasks
+--> tasks/macrotasks: units of work handled by the event loop (setTimeout, setInternal, DOM events..), the run after the call stack is empty, each task -> then all microtask -> next task
+--- microtasks: smaller, higher-priority jobs that run immediately after the current stack clears, before the next task/microtask (promise callbacks (.then, .catch), queueMicrotask..). The always run before the next task is picked. and that is why promises feel "faster" than setTimeout.
+--- multitasks (not JS runtime concept): means handling multiples concurrently (like parallelism or scheduling multiple async jobs)
+Event Loops "simulate" multitasking in JS: tasks and microtasks are combined so it looks concurrent even tho JS is single-threaded
+
+Event Loop: is traffic controller of JS's runtime --> it decides when code runs, especially async code, since JS is single-threaded
+How it works:
+--> Call Stack: Js runs functions here, one at a time. If the stack is busy nothing else runs
+--> Queues (Task/microtask queue: timers (setTimeout), DOM events, I/O
+	    Microtask queue: promises, queueMicrotask...
+	    -- Microtasks always run before the next microtask)
+--> Event Loop cycle: - checks if call stack is empty
+	- if empty, runs all microtasks
+	- then, takes the next task from the stack queue
+	- repeats forever
+so Event loop is the mechanism that coordinates call stack + task queues, ensuring async code executes without blocking
+ 
+
+how to handle promises
+
+create xtra stuff (report, or decorated stuf...)
+
