@@ -1,0 +1,388 @@
+/* =========================================
+   Main Layout
+   ========================================= */
+
+/* =========================================
+   App Background (soft & blurred)
+   ========================================= */
+
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* The blurred background image layer */
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;                       /* shorthand for top/right/bottom/left: 0 */
+
+  background-image: url('./assets/morocco-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /* THE KEY: blur only this layer */
+  filter: blur(4px) brightness(1.15) saturate(0.9);
+
+  /* Slight zoom so the blurry edges don't show a white rim */
+  transform: scale(1.1);
+
+  z-index: -2;                    /* sits behind everything */
+}
+
+/* Soft white veil on top of the blurred image for extra readability */
+.app::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(255, 255, 255, 0.75); /* tweak 0.6 – 0.9 */
+  z-index: -1;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 45px 40px 70px;
+
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 55px;
+}
+
+
+/* =========================================
+   Navbar
+   ========================================= */
+
+.navbar {
+  border-top: 3px solid #55416d;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.6);
+  background: rgba(255, 255, 255, 0.55);   /* see-through white */
+  backdrop-filter: blur(10px);              /* frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);      /* Safari support */
+  position: sticky;                         /* optional: keep it on top when scrolling */
+  top: 0;
+  z-index: 10;
+}
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  min-height: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-name {
+  color: #30343b;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 35px;
+}
+
+.navbar-links a {
+  color: #5d6267;
+  text-decoration: none;
+  font-size: 17px;
+
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #45a7c9;
+}
+
+
+/* =========================================
+   Profile Sidebar
+   ========================================= */
+
+.profile-sidebar {
+  padding-top: 5px;
+
+  width: 260px;
+}
+
+.profile-image {
+  width: 205px;
+  height: 205px;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  border-radius: 50%;
+
+  border: 5px solid #ffffff;
+  outline: 1px solid #dddddd;
+
+  margin: 0 auto 20px;
+}
+
+.profile-name {
+  color: #30343b;
+
+  font-size: 22px;
+
+  margin: 0 0 20px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+
+  text-align: left;
+}
+
+.profile-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.profile-details p,
+.profile-details a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0;
+
+  color: #62676b;
+
+  font-size: 16px;
+
+  text-decoration: none;
+}
+
+.profile-details a:hover {
+  color: #45a7c9;
+}
+
+.detail-icon {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+
+  display: inline-block;
+
+  color: #111111;
+}
+
+.location-icon {
+  font-size: 15px;
+}
+
+.linkedin-icon {
+  color: #0077b5;
+}
+
+.instagram-icon {
+  color: #111111;
+}
+
+/* =========================================
+   Introduction / About
+   ========================================= */
+
+.introduction {
+  padding-top: 0;
+  margin-bottom: 50px;
+}
+
+.introduction h1 {
+  margin: 0 0 18px;
+
+  color: #30343b;
+
+  font-size: 42px;
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+}
+
+.introduction p {
+  max-width: 800px;
+
+  margin: 0 0 25px;
+
+  color: #60656b;
+
+  font-size: 18px;
+
+  line-height: 1.75;
+
+  font-weight: 400;
+}
+
+/* =========================================
+   Projects
+   ========================================= */
+
+.projects h2 {
+  margin: 0 0 28px;
+
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  color: #30343b;
+
+  font-size: 25px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.project {
+  position: relative;
+
+  padding-left: 25px;
+}
+
+.project::before {
+  content: "•";
+
+  position: absolute;
+  left: 3px;
+  top: -3px;
+
+  color: #4d5257;
+
+  font-size: 25px;
+}
+
+.project h3 {
+  margin: 0 0 8px;
+
+  color: #30343b;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.3px;
+}
+
+.project p {
+  max-width: 750px;
+
+  margin: 0 0 8px;
+
+  color: #62676b;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.project a {
+  color: #45a7c9;
+
+  font-size: 16px;
+
+  text-decoration: none;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   Footer / Contact
+   ========================================= */
+
+.footer {
+  border-top: 1px solid rgba(221, 221, 221, 0.6);
+  background: rgba(244, 245, 246, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 22px 40px;
+  display: flex;
+  justify-content: space-between;
+  color: #555b61;      /* darker grey reads better on translucent bg */
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media (max-width: 800px) {
+
+  .navbar-container {
+    padding: 0 25px;
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+
+  .main-container {
+    grid-template-columns: 1fr;
+
+    padding: 35px 25px 50px;
+
+    gap: 45px;
+  }
+
+  .profile-sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-name {
+    text-align: center;
+  }
+
+  .profile-details {
+    align-items: center;
+  }
+
+  .introduction h1 {
+    font-size: 30px;
+  }
+
+  .introduction p {
+    font-size: 17px;
+  }
+}
