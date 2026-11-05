@@ -1,16 +1,16 @@
-# Depth Chart (Routing & Application Architecture lab)
+# NFL roster 2.0 
 
 NFL roster app from the React midterm, extended with React Router, nested routes, dynamic URLs, URL-synced filters and lazy loading.
 
-Live app: _add the deployed link here_
-Repository: _add the GitHub link here_
+Live app: https://github.com/LouayZiani/nfl-roster-2.0
+Repository: [_add the GitHub link here_](https://github.com/LouayZiani/React-Fall-2026/tree/main/Task%205)
 
-## Before you run it (3 files from your midterm)
+## Main data files
 
-1. `src/data/players.json`: replace the 6-player placeholder with your full 197-player file.
+1. `src/data/players.json`: full 197-player file.
 2. `public/nfl.jpg`: the NFL logo.
 3. `public/chiefs-bg.jpg`: the Mahomes photo.
-4. Optional: `public/404.gif`: the GIF for the 404 page (a "NO FISHING" box shows until it exists).
+4. Optional: `public/404.gif`: the GIF for the 404 page
 
 ```
 npm install
