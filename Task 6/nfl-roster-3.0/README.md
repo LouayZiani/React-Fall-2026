@@ -31,6 +31,12 @@ A React-based NFL roster application built as an extension of the original React
 - Cached query results to reduce unnecessary requests.
 - Query invalidation after adding a player so related data stays up to date.
 
+## Caching strategy
+
+TanStack React Query caches the results of successful data-fetching queries using their query keys. When a component requests data that is already cached and still considered fresh, React Query reuses the cached result instead of immediately fetching it again. This helps reduce unnecessary API calls when navigating between pages or revisiting previously loaded data.
+
+Cached data is retained according to the configured `staleTime` and `gcTime` settings. Once data becomes stale, React Query can refetch it when the relevant query is used again. After a player is added, related queries are invalidated so that updated data can be fetched and displayed.
+
 ### Authentication
 - Firebase Authentication.
 - Email and password registration and login.
