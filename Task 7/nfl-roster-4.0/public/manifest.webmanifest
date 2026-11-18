@@ -1,0 +1,25 @@
+{
+  "name": "NFL Roster",
+  "short_name": "NFL Roster",
+  "description": "Explore NFL players, teams, statistics, and comparisons.",
+  "start_url": "/nfl-roster-4.0/",
+  "scope": "/nfl-roster-4.0/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#b4202e",
+  "background_color": "#f7ecec",
+  "icons": [
+    {
+      "src": "/nfl-roster-4.0/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/nfl-roster-4.0/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
