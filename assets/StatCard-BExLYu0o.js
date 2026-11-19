@@ -1,0 +1,1 @@
+import{j as s}from"./index-DUrnKcKq.js";function r({label:a,value:t}){return s.jsxs("div",{className:"stat-card",children:[s.jsx("span",{className:"stat-value",children:t}),s.jsx("span",{className:"stat-label",children:a})]})}export{r as S};
